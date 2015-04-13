@@ -15,6 +15,9 @@ class Login {
 	}
 	
 	public function verificarToken() {
-		return true;
+		$loginDB = new LoginDB();
+		$stm = $loginDB->verificarToken($_POST['token']);
+
+		return $stm->rowCount() == 1;
 	}
 }
