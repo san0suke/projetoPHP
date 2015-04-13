@@ -13,4 +13,8 @@ class Login {
 		}
 		return $encontrado;
 	}
+	
+	public function verificarToken() {
+		return true;
+	}
 }

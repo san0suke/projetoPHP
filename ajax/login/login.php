@@ -1,5 +1,8 @@
 <?php
 $login = new Login();
-$encontrado = $login->verificarLogin();
 
-echo Utils::return_encode(array('autorizado' => $encontrado, 'token' => $login->token));
+if($login->verificarLogin()) {
+	die(Utils::return_encode(array('token' => $login->token)));
+} else {
+	die(Utils::return_encode(array('erro' => Erros::LOGIN_SENHA_INVALIDA)));
+}
