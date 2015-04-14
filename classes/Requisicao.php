@@ -7,7 +7,9 @@ class Requisicao {
 				$login = new Login();
 				$tokenVerificado = $login->verificarToken();
 				if(!$tokenVerificado) {
-					die(Utils::return_encode(array('autorizado' => false, 'erro' => Erros::TOKEN_NAO_AUTORIZADO)));
+					die(Utils::return_encode(array('erro' => Erros::TOKEN_NAO_AUTORIZADO)));
+				} else if ($_POST['a'] == 'token' && $_POST['b'] == 'token') {
+					die(Utils::return_encode(array('token_valido' => TRUE)));
 				}
 			}
 			if(($_POST['a'] == 'login' && $_POST['b'] == 'login') || $tokenVerificado) {
