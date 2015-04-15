@@ -6,4 +6,6 @@ class Erros {
 	const TOKEN_NAO_AUTORIZADO = 3;
 	const LOGIN_SENHA_INVALIDA = 4;
 	const LOGIN_JA_CADASTRADO = 5;
+	const FALHA_REGISTRAR_TOKEN = 6;
+	const FALHA_CADASTRAR = 7;
 }

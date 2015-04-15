@@ -8,14 +8,8 @@ class Usuarios {
 			throw new Exception(Erros::LOGIN_JA_CADASTRADO);
 		}
 		
-// 		$stm = $loginDB->cadastrarUsuario($_POST['usu_login'], $_POST['usu_senha']);
-		
-// 		$encontrado = $stm->rowCount() == 1;
-// 		if($encontrado) {
-// 			$this->token =  md5(uniqid(rand(), true));
-// 			$linha = $stm->fetchObject();
-// 			$loginDB->updateUserKey($linha->usu_id, $this->token);
-// 		}
-// 		return $encontrado;
+		if(!$loginDB->cadastrarUsuario($_POST['usu_login'], $_POST['usu_senha'])) {
+			throw new Exception(Erros::FALHA_CADASTRAR);			
+		}
 	}
 }

@@ -5,8 +5,6 @@ class LoginDB extends Conexao {
 		$sql = "SELECT * FROM usuarios WHERE usu_login = :usu_login AND usu_senha = SHA1(:usu_senha) ";
 		$stm = $this->conn->prepare($sql);
 		$stm->execute(array(':usu_login' => $usu_login, ':usu_senha' => $usu_senha));
-		
-		$this->interpolateQuery($sql, array(':usu_login' => $usu_login, ':usu_senha' => $usu_senha));
 		return $stm;
 	}
 	
@@ -17,11 +15,10 @@ class LoginDB extends Conexao {
 		return $stm;
 	}
 	
-	public function updateUserKey($usu_id, $usu_token) {
+	public function updateUserToken($usu_id, $usu_token) {
 		$sql = "UPDATE usuarios SET usu_token = :usu_token WHERE usu_id = :usu_id ";
 		$stm = $this->conn->prepare($sql);
-		$stm->execute(array(':usu_token' => $usu_token, ':usu_id' => $usu_id));
-		return $stm;
+		return $stm->execute(array(':usu_token' => $usu_token, ':usu_id' => $usu_id));
 	}
 	
 }

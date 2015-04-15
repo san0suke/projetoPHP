@@ -10,7 +10,9 @@ class Login {
 		if($encontrado) {
 			$this->token =  md5(uniqid(rand(), true));
 			$linha = $stm->fetchObject();
-			$loginDB->updateUserKey($linha->usu_id, $this->token);
+			if(!$loginDB->updateUserToken($linha->usu_id, $this->token)) {
+				throw new ErrorException(Erros::FALHA_REGISTRAR_TOKEN);
+			}
 		} else {
 			throw new Exception(Erros::LOGIN_SENHA_INVALIDA);
 		}
