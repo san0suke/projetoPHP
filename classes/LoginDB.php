@@ -2,9 +2,11 @@
 
 class LoginDB extends Conexao {
 	public function consultaLogin($usu_login, $usu_senha) {
-		$sql = "SELECT * FROM usuarios WHERE usu_login = :usu_login AND usu_senha = :usu_senha ";
+		$sql = "SELECT * FROM usuarios WHERE usu_login = :usu_login AND usu_senha = SHA1(:usu_senha) ";
 		$stm = $this->conn->prepare($sql);
 		$stm->execute(array(':usu_login' => $usu_login, ':usu_senha' => $usu_senha));
+		
+		$this->interpolateQuery($sql, array(':usu_login' => $usu_login, ':usu_senha' => $usu_senha));
 		return $stm;
 	}
 	

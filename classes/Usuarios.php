@@ -1,8 +1,14 @@
 <?php
 class Usuarios {
-	public function verificarUsuarios() {
+	public function cadastrarUsuarios() {
 		$loginDB = new UsuariosDB();
-// 		$stm = $loginDB->consultaUsuarios($_POST['login'], $_POST['senha']);
+		$stm = $loginDB->consultaLoginExistente($_POST['usu_login']);
+		$encontrado = $stm->rowCount() == 1;
+		if($encontrado) {
+			throw new Exception(Erros::LOGIN_JA_CADASTRADO);
+		}
+		
+// 		$stm = $loginDB->cadastrarUsuario($_POST['usu_login'], $_POST['usu_senha']);
 		
 // 		$encontrado = $stm->rowCount() == 1;
 // 		if($encontrado) {

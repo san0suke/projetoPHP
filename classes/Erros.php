@@ -5,4 +5,5 @@ class Erros {
 	const ERRO_PARAMETROS_AB = 2;
 	const TOKEN_NAO_AUTORIZADO = 3;
 	const LOGIN_SENHA_INVALIDA = 4;
+	const LOGIN_JA_CADASTRADO = 5;
 }
