@@ -19,7 +19,6 @@ class Usuarios {
         $loginDB = new UsuariosDB();
         $stm = $loginDB->consultaLogins();
         return $stm->fetchAll(PDO::FETCH_ASSOC);
-//        return $stm->fetchAll();
     }
 
 }

@@ -8,7 +8,7 @@ class UsuariosDB extends Conexao {
         $stm->execute(array(':usu_login' => $usu_login));
         return $stm;
     }
-    
+
     public function consultaLogins() {
         $sql = "SELECT usu_id, usu_login FROM usuarios ORDER BY usu_login ";
         return $this->conn->query($sql);
