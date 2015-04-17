@@ -2,7 +2,7 @@
 
 try {
     $usuarios = new Usuarios();
-    $usuarios->cadastrarUsuarios();
+    $usuarios->inativarUsuario();
 
     die(Utils::return_encode(array('sucesso' => true)));
 } catch (Exception $e) {

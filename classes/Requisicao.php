@@ -13,11 +13,11 @@ class Requisicao {
                 } else if ($_POST['a'] == 'token' && $_POST['b'] == 'token') {
                     die(Utils::return_encode(array('token_valido' => TRUE)));
                 }
-            } else if(!isset($_POST['token'])) {
-                die(Utils::return_encode(array('erro' => Erros::TOKEN_NAO_RECEBIDO)));
             }
             if (($_POST['a'] == 'login' && $_POST['b'] == 'login') || $tokenVerificado) {
                 require_once "ajax/{$_POST['a']}/{$_POST['b']}.php";
+            } else if(!isset($_POST['token'])) {
+                die(Utils::return_encode(array('erro' => Erros::TOKEN_NAO_RECEBIDO)));
             }
         } else {
             die(Utils::return_encode(array('erro' => Erros::ERRO_PARAMETROS_AB)));

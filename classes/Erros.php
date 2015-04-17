@@ -10,5 +10,8 @@ class Erros {
     const FALHA_REGISTRAR_TOKEN = 6;
     const FALHA_CADASTRAR = 7;
     const TOKEN_NAO_RECEBIDO = 8;
+    const FALHA_EDITAR = 9;
+    const ID_NAO_RECEBIDO = 10;
+    const FALHA_INATIVAR = 11;
 
 }

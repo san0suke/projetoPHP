@@ -31,7 +31,7 @@ class Conexao {
      * @param array $params The array of substitution parameters
      * @return string The interpolated query
      */
-    public function interpolateQuery($sql, $params) {
+    public function debugQuery($sql, $params) {
     	$keys = array();
     	$values = $params;
     
