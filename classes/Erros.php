@@ -13,5 +13,6 @@ class Erros {
     const FALHA_EDITAR = 9;
     const ID_NAO_RECEBIDO = 10;
     const FALHA_INATIVAR = 11;
+    const FALHA_UPLOAD = 12;
 
 }

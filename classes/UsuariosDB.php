@@ -36,7 +36,7 @@ class UsuariosDB extends Conexao {
         $stm = $this->conn->prepare($sql);
         return $stm->execute(array(':usu_login' => $usu_login, ':usu_senha' => $usu_senha));
     }
-    
+
     public function inativarUsuario($usu_id) {
         $sql = "UPDATE usuarios SET usu_status = 0 WHERE usu_id = :usu_id ";
         $stm = $this->conn->prepare($sql);

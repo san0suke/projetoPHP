@@ -11,7 +11,7 @@ class Utils {
         }
         return json_encode(utf8_encode($retorno));
     }
-    
+
     public static function post_decode() {
         if (count($_POST) > 0) {
             array_walk_recursive($_POST, function(&$item, $key) {
@@ -19,5 +19,5 @@ class Utils {
             });
         }
     }
-    
+
 }
