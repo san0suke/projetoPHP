@@ -19,6 +19,14 @@ class Uploads {
             }
         }
     }
+    
+    public function deletarArquivo($arquivo) {
+        if ($arquivo != null) {
+            if(!@unlink($this->uploaddir.$arquivo)) {
+                throw new Exception(Erros::FALHA_DELETAR);
+            }
+        }
+    }
 
     public function lista_uploads() {
         $diretorio = dir($this->uploaddir);

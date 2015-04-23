@@ -14,5 +14,6 @@ class Erros {
     const ID_NAO_RECEBIDO = 10;
     const FALHA_INATIVAR = 11;
     const FALHA_UPLOAD = 12;
+    const FALHA_DELETAR = 13;
 
 }
